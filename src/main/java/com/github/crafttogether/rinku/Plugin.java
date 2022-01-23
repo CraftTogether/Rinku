@@ -1,6 +1,6 @@
 package com.github.crafttogether.rinku;
 
-import com.github.crafttogether.rinku.discord.commands.DiscordListeners;
+import com.github.crafttogether.rinku.discord.DiscordListeners;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
