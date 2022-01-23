@@ -1,9 +1,10 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group = 'com.github.craftTogether'
-version = '1.0-SNAPSHOT'
+version = '1.0-SNAPSHOT-1'
 
 repositories {
     mavenCentral()
@@ -47,5 +48,13 @@ processResources {
     filteringCharset 'UTF-8'
     filesMatching('plugin.yml') {
         expand props
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from (components.java)
+        }
     }
 }
