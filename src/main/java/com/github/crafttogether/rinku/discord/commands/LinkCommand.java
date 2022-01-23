@@ -31,7 +31,6 @@ public class LinkCommand extends ListenerAdapter {
 
     public void onSlashCommand(SlashCommandEvent event) {
         if (event.getName().equals("link")) {
-            Bukkit.getConsoleSender().sendMessage("ok!");
             event.getUser().openPrivateChannel().queue(channel -> {
                 String randomCode = getRandomCode(); // Get random code
                 // Generate new codes as long as the code is already in use
