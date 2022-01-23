@@ -22,14 +22,27 @@ public class Rinku {
         final JSONArray jsonArray = Connections.get();
         for (int i = 0; i < jsonArray.length(); i++) {
             final JSONObject entry = jsonArray.getJSONObject(i);
-            final Connection connection = new Connection(
-                    entry.getString("discord"),
-                    entry.getString("minecraft")
-            );
+            final Connection connection = new Connection(entry.getString("discord"), entry.getString("minecraft"));
             connections.add(connection);
         }
 
         return connections;
+    }
+
+    public static void remove(Connection connection) {
+        final JSONArray array = Connections.get();
+
+        for (int i = 0; i < array.length(); i++) {
+            final JSONObject entry = array.getJSONObject(i);
+
+            final Connection conn = new Connection(entry.getString("discord"), entry.getString("minecraft"));
+            if (conn.equals(connection)) {
+                array.remove(i);
+            }
+
+        }
+
+        Connections.update(array);
     }
 
 }
