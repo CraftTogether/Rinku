@@ -1,0 +1,7 @@
+name: Rinku
+version: '${version}'
+main: com.github.crafttogether.rinku.Plugin
+api-version: 1.18
+prefix: Rinku
+authors: [ Marian ]
+description: Manage account connections between Minecraft and Discord
