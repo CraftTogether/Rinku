@@ -1,6 +1,7 @@
 package com.github.crafttogether.rinku.minecraft;
 
 import com.github.crafttogether.rinku.Connections;
+import com.github.crafttogether.rinku.Rinku;
 import com.github.crafttogether.rinku.discord.commands.LinkCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -26,7 +27,7 @@ public class VerifyCommand implements CommandExecutor {
         // Provided code is valid
         if (LinkCommand.verify.containsKey(args[0])) {
             final String discordId = LinkCommand.verify.get(args[0]);
-            final JSONArray members = Connections.getInstance().get(); // Get list of connected accounts
+            final JSONArray members = Rinku.getConnections().get(); // Get list of connected accounts
 
             // Search for already existing connection
             for (int i = 0; i < members.length(); i++) {
@@ -44,7 +45,7 @@ public class VerifyCommand implements CommandExecutor {
                     .put("discord", discordId) // Add discord id
                     .put("minecraft", player.getUniqueId()); // Add minecraft UUID
             members.put(member); // Add member to file
-            Connections.getInstance().update(members); // Update members file
+            Rinku.getConnections().update(members); // Update members file
             player.sendMessage(ChatColor.GREEN + "Verification successfully"); // Send success message
         }
         // Provided code is invalid
