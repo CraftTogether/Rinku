@@ -27,6 +27,6 @@ public final class Plugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Rinku disabled");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Rinku disabled");
     }
 }
