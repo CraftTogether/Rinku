@@ -5,3 +5,7 @@ api-version: 1.18
 prefix: Rinku
 authors: [ Marian ]
 description: Manage account connections between Minecraft and Discord
+commands:
+  verify:
+    description: Confirm your verfification
+    usage: /<command> <code>
