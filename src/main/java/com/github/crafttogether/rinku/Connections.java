@@ -14,7 +14,7 @@ public class Connections {
         return new File(Plugin.getInstance().getDataFolder() + File.separator + "connections.json");
     }
 
-    public static void loadFile() {
+    private static void loadFile() {
         try {
             // Config file doesn't exist
             if (!getFile().exists()) {
@@ -28,6 +28,8 @@ public class Connections {
 
     public static JSONArray get() {
         try {
+            loadFile();
+
             final StringBuilder output = new StringBuilder();
             final Scanner scanner = new Scanner(new FileReader(getFile())); // Create scanner from file
             while (scanner.hasNext()) output.append(scanner.next()); // Add all lines to output
