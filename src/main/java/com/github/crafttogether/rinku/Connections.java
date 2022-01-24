@@ -10,12 +10,27 @@ import java.util.Scanner;
 
 public class Connections {
 
+    private static Connections INSTANCE;
+
+    public static Connections getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new Connections();
+        }
+        return INSTANCE;
+    }
+
     private File file;
 
-    public Connections() throws IOException {
+    public Connections() {
         file = new File(Plugin.getInstance().getDataFolder() + "/connections.json");
         if (!file.exists()) {
-            file.createNewFile();
+            try {
+                file.createNewFile();
+                final String content = "[]"; // Create initial json
+                Files.write(Paths.get(getFile().getPath()), content.getBytes()); // Write content as file
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -23,22 +38,8 @@ public class Connections {
         return file;
     }
 
-    private static void loadFile() {
+    public JSONArray get() {
         try {
-            // Config file doesn't exist
-            if (!getFile().exists()) {
-                final String content = "[]"; // Create initial json
-                Files.write(Paths.get(getFile().getPath()), content.getBytes()); // Write content as file
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static JSONArray get() {
-        try {
-            loadFile();
-
             final StringBuilder output = new StringBuilder();
             final Scanner scanner = new Scanner(new FileReader(getFile())); // Create scanner from file
             while (scanner.hasNext()) output.append(scanner.next()); // Add all lines to output
@@ -49,7 +50,7 @@ public class Connections {
         }
     }
 
-    public static void update(JSONArray json) {
+    public void update(JSONArray json) {
         try {
             final Writer toilet = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(getFile()), StandardCharsets.UTF_8));
             toilet.write(json.toString());

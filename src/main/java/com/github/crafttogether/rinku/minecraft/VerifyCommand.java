@@ -26,7 +26,7 @@ public class VerifyCommand implements CommandExecutor {
         // Provided code is valid
         if (LinkCommand.verify.containsKey(args[0])) {
             final String discordId = LinkCommand.verify.get(args[0]);
-            final JSONArray members = Connections.get(); // Get list of connected accounts
+            final JSONArray members = Connections.getInstance().get(); // Get list of connected accounts
 
             // Search for already existing connection
             for (int i = 0; i < members.length(); i++) {
@@ -44,7 +44,7 @@ public class VerifyCommand implements CommandExecutor {
                     .put("discord", discordId) // Add discord id
                     .put("minecraft", player.getUniqueId()); // Add minecraft UUID
             members.put(member); // Add member to file
-            Connections.update(members); // Update members file
+            Connections.getInstance().update(members); // Update members file
             player.sendMessage(ChatColor.GREEN + "Verification successfully"); // Send success message
         }
         // Provided code is invalid

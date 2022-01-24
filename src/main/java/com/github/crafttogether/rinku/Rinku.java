@@ -19,7 +19,7 @@ public class Rinku {
     public static List<Connection> retrieveAll() {
         final List<Connection> connections = new ArrayList<>();
 
-        final JSONArray jsonArray = Connections.get();
+        final JSONArray jsonArray = Connections.getInstance().get();
         for (int i = 0; i < jsonArray.length(); i++) {
             final JSONObject entry = jsonArray.getJSONObject(i);
             final Connection connection = new Connection(entry.getString("discord"), entry.getString("minecraft"));
@@ -30,7 +30,7 @@ public class Rinku {
     }
 
     public static void remove(Connection connection) {
-        final JSONArray array = Connections.get();
+        final JSONArray array = Connections.getInstance().get();
 
         for (int i = 0; i < array.length(); i++) {
             final JSONObject entry = array.getJSONObject(i);
@@ -42,7 +42,7 @@ public class Rinku {
 
         }
 
-        Connections.update(array);
+        Connections.getInstance().update(array);
     }
 
 }
