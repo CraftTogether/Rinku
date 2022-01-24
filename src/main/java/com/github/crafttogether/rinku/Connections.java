@@ -10,8 +10,17 @@ import java.util.Scanner;
 
 public class Connections {
 
-    private static File getFile() {
-        return new File(Plugin.getInstance().getDataFolder() + File.separator + "connections.json");
+    private File file;
+
+    public Connections() throws IOException {
+        file = new File(Plugin.getInstance().getDataFolder() + "/connections.json");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+    }
+
+    public File getFile() {
+        return file;
     }
 
     private static void loadFile() {
