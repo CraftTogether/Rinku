@@ -5,29 +5,21 @@ import org.json.JSONArray;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Connections {
 
-    private static Connections INSTANCE;
-
-    public static Connections getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new Connections();
-        }
-        return INSTANCE;
-    }
-
     private File file;
+    private String path = Plugin.getInstance().getDataFolder() + "/connections.json";
 
     public Connections() {
-        file = new File(Plugin.getInstance().getDataFolder() + "/connections.json");
+        file = new File(path);
         if (!file.exists()) {
             try {
                 file.createNewFile();
                 final String content = "[]"; // Create initial json
-                Files.write(Paths.get(getFile().getPath()), content.getBytes()); // Write content as file
+                Files.write(Path.of(path), content.getBytes()); // Write content as file
             } catch (IOException e) {
                 e.printStackTrace();
             }

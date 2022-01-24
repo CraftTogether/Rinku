@@ -10,6 +10,12 @@ import java.util.function.Predicate;
 
 public class Rinku {
 
+    private static Connections connections = new Connections();
+
+    public static Connections getConnections() {
+        return connections;
+    }
+
     public static Connection find(Predicate<Connection> filter) {
         final Optional<Connection> optional = retrieveAll().stream().filter(filter).findFirst();
         if (optional.isEmpty()) return null;
@@ -19,7 +25,7 @@ public class Rinku {
     public static List<Connection> retrieveAll() {
         final List<Connection> connections = new ArrayList<>();
 
-        final JSONArray jsonArray = Connections.getInstance().get();
+        final JSONArray jsonArray = Rinku.getConnections().get();
         for (int i = 0; i < jsonArray.length(); i++) {
             final JSONObject entry = jsonArray.getJSONObject(i);
             final Connection connection = new Connection(entry.getString("discord"), entry.getString("minecraft"));
@@ -30,7 +36,7 @@ public class Rinku {
     }
 
     public static void remove(Connection connection) {
-        final JSONArray array = Connections.getInstance().get();
+        final JSONArray array = Rinku.getConnections().get();
 
         for (int i = 0; i < array.length(); i++) {
             final JSONObject entry = array.getJSONObject(i);
@@ -42,7 +48,7 @@ public class Rinku {
 
         }
 
-        Connections.getInstance().update(array);
+        Rinku.getConnections().update(array);
     }
 
 }
