@@ -3,7 +3,6 @@ package com.github.crafttogether.rinku.discord.commands;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.bukkit.Bukkit;
 
 import java.util.HashMap;
 import java.util.Random;
