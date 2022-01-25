@@ -37,7 +37,7 @@ public class Connections {
             while ((line = reader.readLine()) != null) {
                 output.append(line);
             }
-
+            reader.close();
             return new JSONArray(output.toString()); // Create JSONObject from output
         } catch (Exception e) {
             return null;
