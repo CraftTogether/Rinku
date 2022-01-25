@@ -18,6 +18,9 @@ public final class Plugin extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
+        getConfig().options().copyDefaults();
+        saveConfig();
+
         DiscordListeners.register();
         getCommand("verify").setExecutor(new VerifyCommand());
 
