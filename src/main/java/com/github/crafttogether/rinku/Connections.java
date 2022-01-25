@@ -30,15 +30,9 @@ public class Connections {
     }
 
     public JSONArray get() {
-        try {
-            final StringBuilder output = new StringBuilder();
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                output.append(line);
-            }
-            reader.close();
-            return new JSONArray(output.toString()); // Create JSONObject from output
+        try (FileInputStream input = new FileInputStream(file)) {
+            byte[] bytes = input.readAllBytes();
+            return new JSONArray(bytes); // Create JSONObject from output
         } catch (Exception e) {
             return null;
         }
