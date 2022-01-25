@@ -33,8 +33,11 @@ public class Connections {
     public JSONArray get() {
         try {
             final StringBuilder output = new StringBuilder();
-            final Scanner scanner = new Scanner(new FileReader(getFile())); // Create scanner from file
-            while (scanner.hasNext()) output.append(scanner.next()); // Add all lines to output
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                output.append(line);
+            }
 
             return new JSONArray(output.toString()); // Create JSONObject from output
         } catch (Exception e) {
