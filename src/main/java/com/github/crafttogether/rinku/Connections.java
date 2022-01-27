@@ -32,7 +32,7 @@ public class Connections {
     public JSONArray get() {
         try (FileInputStream input = new FileInputStream(file)) {
             byte[] bytes = input.readAllBytes();
-            return new JSONArray(bytes); // Create JSONObject from output
+            return new JSONArray(new String((bytes))); // Create JSONObject from output
         } catch (Exception e) {
             return null;
         }
