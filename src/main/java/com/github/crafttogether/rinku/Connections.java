@@ -34,7 +34,7 @@ public class Connections {
             byte[] bytes = input.readAllBytes();
             return new JSONArray(new String((bytes))); // Create JSONObject from output
         } catch (Exception e) {
-            return null;
+            return new JSONArray();
         }
     }
 
