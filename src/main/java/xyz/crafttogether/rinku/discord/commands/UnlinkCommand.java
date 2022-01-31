@@ -1,7 +1,7 @@
-package com.github.crafttogether.rinku.discord.commands;
+package xyz.crafttogether.rinku.discord.commands;
 
-import com.github.crafttogether.rinku.Connection;
-import com.github.crafttogether.rinku.Rinku;
+import xyz.crafttogether.rinku.Connection;
+import xyz.crafttogether.rinku.Rinku;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 

@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.craftTogether'
-version = '1.0-SNAPSHOT-6'
+version = '1.0-SNAPSHOT-7'
 
 repositories {
     mavenCentral()
@@ -20,9 +20,13 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 
+shadowJar {
+    archiveFileName = "${baseName}-${version}.jar"
+}
+
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT'
-    compileOnly "com.github.CraftTogether:Kelp:1.2-SNAPSHOT-2"
+    compileOnly "com.github.CraftTogether:Kelp:1.2-SNAPSHOT-3"
     compileOnly "net.dv8tion:JDA:5.0.0-alpha.4"
     implementation "org.json:json:20201115"
 }

@@ -1,4 +1,4 @@
-package com.github.crafttogether.rinku;
+package xyz.crafttogether.rinku;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

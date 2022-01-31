@@ -1,8 +1,7 @@
-package com.github.crafttogether.rinku.minecraft;
+package xyz.crafttogether.rinku.minecraft;
 
-import com.github.crafttogether.rinku.Connections;
-import com.github.crafttogether.rinku.Rinku;
-import com.github.crafttogether.rinku.discord.commands.LinkCommand;
+import xyz.crafttogether.rinku.Rinku;
+import xyz.crafttogether.rinku.discord.commands.LinkCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

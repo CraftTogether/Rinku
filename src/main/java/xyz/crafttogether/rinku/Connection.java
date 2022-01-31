@@ -1,4 +1,4 @@
-package com.github.crafttogether.rinku;
+package xyz.crafttogether.rinku;
 
 public class Connection {
 

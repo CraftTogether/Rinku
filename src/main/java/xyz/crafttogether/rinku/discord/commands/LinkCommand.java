@@ -1,4 +1,4 @@
-package com.github.crafttogether.rinku.discord.commands;
+package xyz.crafttogether.rinku.discord.commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
