@@ -1,6 +1,6 @@
 name: Rinku
 version: '${version}'
-main: com.github.crafttogether.rinku.Plugin
+main: xyz.crafttogether.rinku.Plugin
 api-version: 1.18
 prefix: Rinku
 authors: [ Marian ]
