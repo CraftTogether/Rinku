@@ -37,7 +37,9 @@ repositories {
         url: 'https://jitpack.io'
     }
 }
+```
 
+```gradle
 dependencies {
     compileOnly 'com.github.CraftTogether:rinku:VERSION`
 }
@@ -50,7 +52,9 @@ dependencies {
         <url>https://jitpack.io</url>
     </repository>
 </repositories>
+```
 
+```xml
 <dependencies>
     <dependency>
         <groupId>com.github.CraftTogether</groupId>
