@@ -1,6 +1,5 @@
 [![](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/zSWjKVvfNy)
 [![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CraftTogether) <BR>
-[![](https://jitpack.io/v/CraftTogether/Rinku.svg)](https://jitpack.io/#CraftTogether/Rinku)
 ![](https://img.shields.io/badge/Maintained%3F-yes-green.svg) <BR>
 [![](https://img.shields.io/github/downloads/CraftTogether/rinku/total.svg)](https://github.com/CraftTogether/rinku/releases)
 ![](https://img.shields.io/github/issues/CraftTogether/rinku.svg)
@@ -34,22 +33,22 @@ replace `VERSION` with the latest version (see the badges at top of repo)
 ```gradle
 repositories {
     maven {
-        url: 'https://jitpack.io'
+        url: 'https://repo.polarian.dev/repo'
     }
 }
 ```
 
 ```gradle
 dependencies {
-    compileOnly 'com.github.CraftTogether:rinku:VERSION`
+    compileOnly 'xyz.crafttogether:Rinku:VERSION`
 }
 ```
 ### Maven:
 ```xml
 <repositories>
     <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
+        <id>polarian-repo</id>
+        <url>https://repo.polarian.dev/repo</url>
     </repository>
 </repositories>
 ```
@@ -57,8 +56,8 @@ dependencies {
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.github.CraftTogether</groupId>
-        <artifactId>rinku</artifactId>
+        <groupId>xyz.crafttogether</groupId>
+        <artifactId>Rinku</artifactId>
         <version>VERSION</version>
         <scope>provided</scope>
     </dependency>
