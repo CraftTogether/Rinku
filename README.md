@@ -2,7 +2,7 @@
 [![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CraftTogether) <BR>
 [![](https://img.shields.io/github/v/release/CraftTogether/Rinku?color=brightgreen&label=Plugin%20version)](https://github.com/CraftTogether/Rinku/releases)
 [![](https://img.shields.io/github/v/tag/CraftTogether/Rinku?color=brightgreen&label=API%20version)](https://repo.polarian.dev/repo/xyz/crafttogether/Rinku/)
-![](https://img.shields.io/badge/Maintained%3F-yes-green.svg) <BR>
+![](https://img.shields.io/badge/Maintained%3F-no-red.svg) <BR>
 [![](https://img.shields.io/github/downloads/CraftTogether/rinku/total.svg)](https://github.com/CraftTogether/rinku/releases)
 ![](https://img.shields.io/github/issues/CraftTogether/rinku.svg)
 ![](https://img.shields.io/github/issues-pr/CraftTogether/rinku.svg)
