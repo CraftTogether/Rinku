@@ -7,7 +7,8 @@
 ![](https://img.shields.io/github/issues/CraftTogether/rinku.svg)
 ![](https://img.shields.io/github/issues-pr/CraftTogether/rinku.svg)
 ![](https://img.shields.io/github/repo-size/CraftTogether/Rinku)
-# ⛓ Rinku
+# ⛓ Rinku (DEPRECATED)
+Rinku is now deprecated and replaced with [craftcore](https://github.com/CraftTogether/craftcore)
 
 Plugin to connect your Minecraft Account with Discord.
 
